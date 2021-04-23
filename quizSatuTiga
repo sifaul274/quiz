@@ -1,0 +1,32 @@
+import java.util.Scanner;
+class Pecahan{
+    int pembilang, penyebut;
+    Pecahan(int pembilang, int penyebut){
+        this.pembilang = pembilang;
+        this.penyebut = penyebut;
+    }
+    void sederhanakan(){
+        int pembagi = 1;
+        while (pembilang>=pembagi && penyebut>=pembagi){
+            if (pembilang%pembagi==0 && penyebut%pembagi==0 && pembagi==1) {
+                pembilang /= pembagi;
+                penyebut /= pembagi;
+                pembagi++;
+            } else if (pembilang%pembagi==0 && penyebut%pembagi==0) {
+                pembilang /= pembagi;
+                penyebut /= pembagi;
+            } else {
+                pembagi++;
+            }
+        }
+    }
+}
+public class QuizSatuTiga {
+    public static void main(String[] args){
+        Scanner ketik = new Scanner(System.in);
+        Pecahan p1 = new Pecahan(15,27);
+        System.out.println("Hasil penyederhanaan dari "+p1.pembilang+"/"+p1.penyebut+" adalah");
+        p1.sederhanakan();
+        System.out.println(p1.pembilang+"/"+p1.penyebut);
+    }
+}
