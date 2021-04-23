@@ -1,0 +1,130 @@
+class MakhlukHidup{
+    String nama, bergerak, makan;
+    MakhlukHidup(String nama){
+        this.nama = nama;
+    }
+    void setNama(String nama){
+        this.nama = nama;
+    }
+    String getNama(){
+        return this.nama;
+    }
+}
+class Manusia extends MakhlukHidup{
+    Manusia(String nama){
+        super(nama);
+        bergerak = "melakukan pekerjaan";
+        makan = "makanan yang telah diolah";
+    }
+    @Override
+    void setNama(String nama){
+        this.nama = nama;
+    }
+    @Override
+    String getNama(){
+        return this.nama;
+    }
+    void setBergerak(String bergerak){
+        this.bergerak = bergerak;
+    }
+    String getBergerak(){
+        return this.bergerak;
+    }
+    void setMakan(String makan){
+        this.makan = makan;
+    }
+    String getMakan(){
+        return this.makan;
+    }
+    void tampilkanRincian(){
+        System.out.println("\n==Rincian==");
+        System.out.println("Nama: "+getNama());
+        System.out.println("Bergerak: "+getBergerak());
+        System.out.println("Makan: "+getMakan());
+    }
+}
+class Hewan extends MakhlukHidup{
+    Hewan(String nama){
+        super(nama);
+        bergerak = "mencari makanan";
+        makan = "makanan mentah";
+    }
+    @Override
+    void setNama(String nama){
+        this.nama = nama;
+    }
+    @Override
+    String getNama(){
+        return this.nama;
+    }
+    void setBergerak(String bergerak){
+        this.bergerak = bergerak;
+    }
+    String getBergerak(){
+        return this.bergerak;
+    }
+    void setMakan(String makan){
+        this.makan = makan;
+    }
+    String getMakan(){
+        return this.makan;
+    }
+    void tampilkanRincian(){
+        System.out.println("\n==Rincian==");
+        System.out.println("Nama: "+getNama());
+        System.out.println("Bergerak: "+getBergerak());
+        System.out.println("Makan: "+getMakan());
+    }
+}
+class Tumbuhan extends MakhlukHidup{
+    Tumbuhan(String nama){
+        super(nama);
+        bergerak = "reaksi tertentu akibat rangsangan dari luar";
+        makan = "air, sinar, zat hara";
+    }
+    @Override
+    void setNama(String nama){
+        this.nama = nama;
+    }
+    @Override
+    String getNama(){
+        return this.nama;
+    }
+    void setBergerak(String bergerak){
+        this.bergerak = bergerak;
+    }
+    String getBergerak(){
+        return this.bergerak;
+    }
+    void setMakan(String makan){
+        this.makan = makan;
+    }
+    String getMakan(){
+        return this.makan;
+    }
+    void tampilkanRincian(){
+        System.out.println("\n==Rincian==");
+        System.out.println("Nama: "+getNama());
+        System.out.println("Bergerak: "+getBergerak());
+        System.out.println("Makan: "+getMakan());
+    }
+}
+public class QuizSatuDua {
+    public static void main(String[] args){
+        Manusia m1 = new Manusia("Aqqi");
+        Hewan h1 = new Hewan("Harimau");
+        Tumbuhan t1 = new Tumbuhan("Putri Malu");
+        m1.tampilkanRincian();
+        m1.setBergerak("belajar di sekolah");
+        m1.tampilkanRincian();
+        
+        h1.tampilkanRincian();
+        h1.setBergerak("mencari mangsa");
+        h1.setMakan("daging");
+        h1.tampilkanRincian();
+        
+        t1.tampilkanRincian();
+        t1.setBergerak("menutup daun ketika disentuh");
+        t1.tampilkanRincian();
+    }
+}
