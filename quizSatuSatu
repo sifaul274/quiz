@@ -1,0 +1,58 @@
+import java.util.Scanner;
+class BangunDatar{
+    double sisi, panjang, lebar;
+    double hitungLuas(){
+        double luas = sisi*sisi;
+        return luas;
+    }
+    double hitungKeliling(){
+        double keliling = sisi*4;
+        return keliling;
+    }
+}
+class Persegi extends BangunDatar{
+    void identifikasi(){
+        System.out.println("Ini adalah bangun persegi dengan:");
+        System.out.println("Sisi: "+sisi+" cm");
+    }
+}
+class PersegiPanjang extends BangunDatar{
+    @Override
+    double hitungLuas(){
+        double luas = panjang*lebar;
+        return luas;
+    }
+    @Override
+    double hitungKeliling(){
+        double keliling = 2*(panjang+lebar);
+        return keliling;
+    }
+    void identifikasi(){
+        System.out.println("Ini adalah bangun persegi panjang dengan:");
+        System.out.println("Panjang: "+panjang+" cm");
+        System.out.println("Lebar: "+lebar+" cm");
+    }
+}
+public class QuizSatuSatu {
+    public static void main(String[] args){
+        Scanner ketik = new Scanner(System.in);
+        Persegi b1 = new Persegi();
+        PersegiPanjang b2 = new PersegiPanjang();
+        
+        System.out.println("==PERSEGI==");
+        System.out.print("Masukkan sisi => ");
+        b1.sisi = ketik.nextDouble();
+        b1.identifikasi();
+        System.out.println("Luas: "+b1.hitungLuas()+" cm");
+        System.out.println("Keliling: "+b1.hitungKeliling()+" cm");
+        
+        System.out.println("\n==PERSEGI PANJANG==");
+        System.out.print("Masukkan panjang => ");
+        b2.panjang = ketik.nextDouble();
+        System.out.print("Masukkan lebar => ");
+        b2.lebar = ketik.nextDouble();
+        b2.identifikasi();
+        System.out.println("Luas: "+b2.hitungLuas()+" cm");
+        System.out.println("Keliling: "+b2.hitungKeliling()+" cm");
+    }
+}
