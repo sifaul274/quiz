@@ -35,7 +35,7 @@ class Vehicle{
         return nilai;
     }
     double liter(){
-        double liter = this.kmPerGallons/3785;
+        double liter = this.getKmPerGallons()/3785;
         return liter;
     }
     void showLiter(){
